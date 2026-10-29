@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="app_name">Metaro</string>
+
+    <string name="search_hint">Şehir ara</string>
+    <string name="action_clear">Temizle</string>
+    <string name="action_retry">Tekrar dene</string>
+
+    <string name="detail_title">Hava Tahmini</string>
+    <string name="action_back">Geri</string>
+    <string name="detail_hourly">Saatlik</string>
+    <string name="detail_daily">7 Günlük</string>
+    <string name="detail_feels_like">Hissedilen</string>
+    <string name="detail_humidity">Nem</string>
+    <string name="detail_wind">Rüzgâr</string>
+    <string name="today">Bugün</string>
+</resources>

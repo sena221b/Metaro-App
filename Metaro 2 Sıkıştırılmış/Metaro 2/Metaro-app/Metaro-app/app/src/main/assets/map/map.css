@@ -1,0 +1,46 @@
+html,body{height:100%;width:100%;margin:0;padding:0;overflow:hidden;background:#091722;font-family:system-ui,sans-serif}
+#map{position:absolute;top:0;left:0;right:0;bottom:0;height:100%;width:100%;margin:0;background:#091722}
+.leaflet-container{background:#091722}
+.leaflet-control-zoom{border:1px solid #39515d!important;overflow:hidden;border-radius:12px!important;box-shadow:0 4px 20px #0006!important}
+.leaflet-control-zoom a{background:#10232e!important;color:#cceeea!important;border-color:#39515d!important;width:36px!important;height:36px!important;line-height:36px!important}
+.leaflet-control-attribution{font-size:8px!important;color:#dcebef!important;background:#091722dd!important;max-width:95%}
+.leaflet-control-attribution a{color:#a9d8db}
+.map-label{position:absolute;top:14px;left:12px;z-index:500;background:#0a1b27d9;border:1px solid #43616d88;border-radius:8px;padding:7px 9px;font-size:10px;letter-spacing:1px;color:#b8eee5;pointer-events:none}
+.map-label span{font-size:8px;color:#a9b7c0;letter-spacing:.4px}
+.weather-chip{box-sizing:border-box;padding:6px 9px;background:#0a1b27ed;color:#e8f5f6;border:1px solid #8dd7cb66;border-radius:10px;font-size:12px;white-space:nowrap;box-shadow:0 3px 12px #0005;min-width:61px;text-align:center}
+.weather-chip small{display:block;color:#a9b7c0;font-size:8px;margin-top:2px}
+.selected-dot{width:14px;height:14px;border-radius:50%;background:#fff;border:4px solid #53c9ba;box-shadow:0 0 0 8px #53c9ba40}
+#status{position:absolute;bottom:25px;left:12px;right:12px;z-index:600;text-align:center;font-size:11px;color:#ffe4b5;background:#10232ee8;border-radius:8px;padding:7px;display:none;pointer-events:none}
+
+/* Animated Route Path */
+.animated-route-bg{stroke-linecap:round;filter:drop-shadow(0 0 7px rgba(113,232,219,0.7))}
+.animated-route-flow{stroke-linecap:round;stroke-dasharray:10,14;animation:flightFlowAnim 1.6s linear infinite;filter:drop-shadow(0 0 6px #71e8db)}
+@keyframes flightFlowAnim{from{stroke-dashoffset:48}to{stroke-dashoffset:0}}
+
+/* Endpoint Beacon Radar Pulses */
+.endpoint-wrapper{position:relative;display:flex;align-items:center;justify-content:center}
+.radar-pulse{position:absolute;width:24px;height:24px;border-radius:50%;pointer-events:none;z-index:1}
+.radar-pulse::before,.radar-pulse::after{content:'';position:absolute;inset:-8px;border-radius:50%;border:2px solid #71e8db;opacity:0;animation:radarWave 2.2s cubic-bezier(0.1,0.5,0.4,1) infinite}
+.radar-pulse::after{animation-delay:1.1s}
+.landing-pulse::before,.landing-pulse::after{border-color:#56e1ff}
+@keyframes radarWave{0%{transform:scale(0.3);opacity:0.95}65%{opacity:0.35}100%{transform:scale(3.4);opacity:0}}
+
+/* Animated Endpoint Badges */
+.endpoint{position:relative;z-index:10;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#0d2732 0%,#071720 100%);color:#f0fcf9;border:1.5px solid #71e8db;border-radius:14px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:700;box-shadow:0 4px 18px rgba(0,0,0,0.7),0 0 10px rgba(113,232,219,0.4);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.endpoint:hover{transform:scale(1.06);box-shadow:0 6px 22px rgba(0,0,0,0.85),0 0 14px rgba(113,232,219,0.6)}
+.endpoint-takeoff{border-color:#71e8db}
+.endpoint-landing{border-color:#56e1ff}
+.endpoint-icon{display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1}
+.takeoff-bounce{animation:takeoffClimb 1.8s ease-in-out infinite}
+.landing-bounce{animation:landingDescend 1.8s ease-in-out infinite}
+@keyframes takeoffClimb{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-3.5px) rotate(-10deg)}}
+@keyframes landingDescend{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(3.5px) rotate(10deg)}}
+.endpoint-tag{font-size:8px;font-weight:800;letter-spacing:0.8px;padding:2px 5px;border-radius:4px;text-transform:uppercase}
+.endpoint-takeoff .endpoint-tag{background:rgba(113,232,219,0.2);color:#71e8db}
+.endpoint-landing .endpoint-tag{background:rgba(86,225,255,0.2);color:#56e1ff}
+
+/* Flying Aircraft Animation */
+.flying-plane-box{pointer-events:none;position:relative;width:48px;height:48px;display:flex;align-items:center;justify-content:center;will-change:transform}
+.flying-plane-svg{width:36px;height:36px;transition:filter .2s ease}
+.plane-jet-trail{position:absolute;width:6px;height:6px;border-radius:50%;background:radial-gradient(circle,#71e8db 20%,rgba(113,232,219,0) 80%);bottom:3px;animation:jetPuff .5s linear infinite;pointer-events:none}
+@keyframes jetPuff{0%{transform:scale(1) translateY(0);opacity:.85}100%{transform:scale(2.5) translateY(12px);opacity:0}}
